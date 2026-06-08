@@ -5,22 +5,17 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - run: echo "Hey, ${{ github.event_name }} is now running in ${{ github.repository }}"
       - name: Check out repository code
         uses: actions/checkout@v6
       - run: echo "${{ github.repository }} has been cloned to the runner."
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Install dependencies
         run: pip install -r requirements.txt
-
       - name: Run tests
         run: pytest -q
-      
       - run: echo "Run status: ${{ job.status }}."
