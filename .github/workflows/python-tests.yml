@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "Hey, ${{ github.even_name }} is now running in ${{ github.repository }}"
+      - run: echo "Hey, ${{ github.event_name }} is now running in ${{ github.repository }}"
       - name: Check out repository code
         uses: actions/checkout@v6
       - run: echo "${{ github.repository }} has been cloned to the runner."
