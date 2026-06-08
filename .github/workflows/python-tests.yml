@@ -1,5 +1,5 @@
 name: Hello World Agent Harness test
-run-name: ${{github.actor}} is testing your workflow.
+run-name: ${{ github.actor }} is testing your workflow.
 
 on: [push]
 jobs:
@@ -23,4 +23,4 @@ jobs:
       - name: Run tests
         run: pytest -q
       
-      - run: echo "Run status: $${{ job.status }}."
+      - run: echo "Run status: ${{ job.status }}."
