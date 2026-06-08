@@ -4,6 +4,6 @@ def hello_message():
     pass
 
 def add_two_numbers(a:int,b:int) :
-    # TODO: This function takes in two arguments which must be integers and adds them and get the total as an int.
+    # TODO: This function takes in two arguments (which must be integers and adds) them and get the total as an int.
 
     pass
