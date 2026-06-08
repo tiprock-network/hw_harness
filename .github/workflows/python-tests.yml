@@ -1,22 +1,16 @@
-name: Python Tests
+name: Hello World Agent Harness test
+run-name: ${{github.actor}} is testing your workflow.
 
-on:
-  push:
-    branches:
-      - main
-      - master
-  pull_request:
-    branches:
-      - main
-      - master
-
+on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - run: echo "Hey, ${{ github.even_name }} is now running in ${{ github.repository }}"
+      - name: Check out repository code
+        uses: actions/checkout@v6
+      - run: echo "${{ github.repository }} has been cloned to the runner."
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,3 +22,5 @@ jobs:
 
       - name: Run tests
         run: pytest -q
+      
+      - run: echo "Run status: $${{ job.status }}."
