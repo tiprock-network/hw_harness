@@ -1,7 +1,7 @@
 from src.main import hello_message, add_two_numbers
 
 def test_hello_message():
-    """This test checks if hellow world has been printed out as is, in its lower case."""
+    """This test checks if hello world has been printed out as is, in its lower case."""
     assert hello_message() == "hello world"
 
 def test_add_two_numbers():
